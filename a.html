@@ -1,0 +1,568 @@
+<html>
+<head>
+	<style>
+	body {
+	    font-family: sans-serif;
+		width:670px;
+		margin:auto;
+		height:100%;
+	  }
+	h1 {
+	    color: #2c3e50;
+	    text-align: center;
+	  margin-bottom: 0;
+	}
+
+	/*-- Detail control --*/
+	.pa_control {
+	   width: 560px;
+	  margin-left: 100px;
+	}
+	.pa_item_cont{
+		height:0;
+		overflow:hidden;
+		transition:all 1s;
+		  background-color: #2c3e50;
+	  color: white;
+	  box-sizing: border-box;
+	  margin-top: -5px;
+	  position: relative;
+	}
+	.pa_item_cont_open{
+	height:380px;
+	  padding: 15px;
+	}
+	.pa_item:nth-child(even) {
+	    background-color: #93BA63;
+	}
+
+	.pa_item_header {
+	    box-sizing: border-box;
+	    padding: 15px;
+	    display: inline-block;
+	    width: 100%;
+	    position: relative;
+	    border-bottom: 2px solid #2c3e50;
+	}
+
+	.pa_item_header img {
+	    border: 2px solid #2c3e50;
+	    border-radius: 100%;
+	    float: left;
+		  width: 100px;
+	  height: 100px;
+	}
+
+	.pa_item_header h2 {
+	    color: #2c3e50;
+	    float: left;
+	    margin: 20px;
+	    margin-top: 40px;
+	}
+	.pa_item_header button:focus{
+		border:0;
+		box-shadow:0 0 0;
+		outline: -webkit-focus-ring-color auto 0px;
+	}
+	.pa_item_header button {
+	     background-image: url('http://www.clipartbest.com/cliparts/yio/6y6/yio6y6yiE.png');
+	  width: 50px;
+	  height: 50px;
+	  background-size: contain;
+	  background-color: white;
+	  border: 0;
+	  position: absolute;
+	  bottom: 10px;
+	  right: 10px;
+	  transition: 1s all;
+	  transform: rotate(0deg);
+	  -webkit-transform: rotate(0deg);
+	  border-radius: 100%;
+	}
+
+	.pa_item_header button.slideToggle{
+		transform:rotate(180deg);
+		-webkit-transform:rotate(180deg);
+	}
+	.pa_cell label,.pa_row label {
+	    color: #93BA63;
+	    margin-right: 10px;
+	    display: block;
+	    margin-bottom: 2px;
+	}
+
+	.pa_cell,.pa_row {
+	    width: 48%;
+	    display: inline-block;
+	    margin: 10px 0;
+	}
+
+	.pa_cell span, .pa_row span {
+	    display: block;
+	    margin-left: 20px;
+	    word-wrap: break-word;
+	}
+
+	.pa_item_cont a:hover {
+	    color: #93BA63;
+	}
+
+	.pa_item_cont a {
+	    color: white;
+	    text-decoration: none;
+	}
+
+
+	/*-- Details Header --*/
+	.details_control {
+	    background-color: #93BA63;
+	    padding: 15px;
+	    box-sizing: border-box;
+	}
+
+	.details_info img {
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 100%;
+	    border: 2px solid #2c3e50;
+	    background-color: white;
+	    float: left;
+	}
+
+	.details_info {
+	    width: 80%;
+	    margin: auto;
+	    display: table;
+	}
+
+	.sub_info {
+	    float: left;
+	    width: 200px;
+	    margin: 20px;
+	}
+
+	.FormBtn {
+	    cursor: pointer;
+	    background-color: #2c3e50;
+	    float: right;
+	    color: white;
+	    padding: 5px;
+	    font-weight: bold;
+		  margin-top: 30px;
+		border:0;
+	}
+
+	/*-- Form Css --*/
+	.pf_cont {
+	  width: 100px;
+	  height: 500px;
+	  position: fixed;
+	  z-index: 2;
+	}
+	.pf_cont > a {
+	  border: 0;
+	  background-color: #2c3e50;
+	  color: white;
+	  font-size: 27px;
+	  width: 100%;
+	  height: 100%;
+	  position: relative;
+		display: block;
+	  text-decoration: none;
+	}
+	.pf_cont > a:hover{
+	  background-color: #93BA63;
+	}
+	.pf_cont > a span {
+	    transform: rotate(-90deg);
+	  -webkit-transform: rotate(-90deg);
+	  display: block;
+	  width: 200px;
+	  left: -45px;
+	  top: 185px;
+	  position: absolute;
+	}
+
+	.profileForm {
+	     background-color: #2c3e50;
+	  color: white;
+	  padding: 20px;
+	  box-sizing: border-box;
+	  position: absolute;
+	  top: 5%;
+	  width: 670px;
+	  margin: auto;
+		  -webkit-transform-style: preserve-3d;
+	  -webkit-transition: all 0.5s linear;
+	  -webkit-transform-origin: 0px;
+	  -webkit-transform: rotateY(90deg);
+	  z-index: 2;
+	  box-shadow: 1px 1px 10px #000;
+	}
+	.profileFormShow{
+		display:block;
+	  -webkit-transform: rotateY(0deg);
+	}
+	.pf_controls {
+	    clear: both;
+	    width: 100%;
+	    height: 55px;
+	}
+
+	.pf_controls h2 {
+	    float: left;
+	    width: 40%;
+	    margin: 0;
+	}
+
+	.pf_controls button {
+	    border: 0;
+	    background-color: transparent;
+	    font-weight: bold;
+	    font-size: 20px;
+	    color: #93BA63;
+	    float: right;
+	}
+	.pf_item {
+	    width: 47%;
+	  display: inline-block;
+	  margin: 7px 1%;
+	  height: 42px;
+	  vertical-align: top;
+	}
+
+	.pf_item > label {
+	    width: 30%;
+	    display: inline-block;
+	}
+
+	.pf_item > span {
+	    display: inline-block;
+	    width: 68%;
+		  vertical-align: top;
+	}
+
+	.pf_item > span > input[type="text"],.pf_item > span > input[type="email"], .pf_item > span > input[type="url"],.pf_item > span > textarea.pf_item > span > input[type="date"] {
+	    width: 97%;
+	    border-color: transparent;
+		padding:1px;
+	}
+	input.pf_submit {
+	  background-color: #93BA63;
+	  color: white;
+	  font-size: 17px;
+	  font-weight: bold;
+	  border: 0;
+	  padding: 7px;
+	  display: block;
+	  margin: 10px auto;
+	}
+	.pf_error {
+	    color: rgb(230, 0, 0);
+	  background-color: rgb(255, 153, 153);
+	  padding: 5px;
+	  box-sizing: border-box;
+	  border: 1px solid rgb(230, 0, 0);
+	  margin-bottom: 20px;
+	}
+	.pf_item > span.pf_item_error {
+	    display: block;
+	  color: rgb(225, 68, 68);
+	  margin-left: 20px;
+	  width: auto;
+	  margin-top: 2px;
+	}
+
+	/*-- Not been touched --*/
+	.pf_item .ng-prestine{background-color:white}
+	/*-- Being edited and not valid --*/
+	.pf_item .ng-dirty.ng-invalid, .pristine-invalid{background-color:rgb(255, 153, 153)}
+	/*-- being edited and valid --*/
+	.pf_item .ng-dirty.ng-valid{background-color:#93BA63}
+	</style>
+
+</head>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<div data-ng-app="profileApp">
+	<div class="pf_cont" data-ng-controller="profileformController as profileForm">
+		<div class="profileForm"   ng-class="{'profileFormShow':profileForm.visible==true}">
+		<div class="pf_controls">
+			<h2>Profile Form</h2>
+			<button data-ng-click="profileForm.profileFormClose()">X</button>
+		</div>
+		<form ng-submit="pf_form.$valid && profileForm.addProfile(profileArray)" ng-model="pf_form" name="pf_form"  novalidate>
+			<div class="pf_error" ng-show="pf_form.$submitted && !pf_form.$valid" >
+				Error: Please check all mandatory fields are filled out correctly
+			</div>
+			<div class="pf_item">
+				<label>Firstname<span>*</span>:</label>
+			<span>
+				<input type="text" data-ng-model="profileForm.profile.firstName" name="firstName" required="required" ng-class="{'pristine-invalid':((pf_form.$submitted || pf_form.firstName.$dirty) && !pf_form.firstName.$valid)}" />
+			</span>
+				<span class="pf_item_error" ng-show="((pf_form.$submitted || pf_form.firstName.$dirty) && !pf_form.firstName.$valid)">
+					Please enter a First name.
+				</span>
+		</div>
+			<div class="pf_item">
+			<label>Lastname:</label>
+			<span>
+				<input type="text" data-ng-model="profileForm.profile.lastName" />
+			</span>
+		</div>
+			<div class="pf_item">
+			<label>Gender<span>*</span>:</label>
+			<span>
+
+				<label for="genderMale" >Male
+				<input type="radio" id="genderMale" name="gender" data-ng-model="profileForm.profile.gender" value="Male" ng-required="!profileForm.profile.gender" ng-class="{'pristine-invalid':((pf_form.$submitted || pf_form.gender.$dirty) && pf_form.gender.$error.required)}"  /></label>
+				<label for="genderFemale" >Female
+				<input type="radio" id="genderFemale" name="gender" data-ng-model="profileForm.profile.gender" value="Female" ng-required="!profileForm.profile.gender" ng-class="{'pristine-invalid':((pf_form.$submitted || pf_form.gender.$dirty) && pf_form.gender.$error.required)}" /></label>
+			</span>
+				<span class="pf_item_error" ng-show="((pf_form.$submitted || pf_form.gender.$dirty) && pf_form.gender.$error.required)">
+					Please Select a Gender.
+				</span>
+		</div>
+			<div class="pf_item">
+			<label>Date of Birth<span>*</span>:</label>
+			<span>
+				<input type="date" data-ng-model="profileForm.profile.dateBirth" placeholder="yyyy-MM-dd" min="1950-01-01" max="2010-12-31" name="dateBirth" required class="{'pristine-invalid':((pf_form.$submitted || pf_form.dateBirth.$dirty) && (!pf_form.dateBirth.$valid))}" />
+			</span>
+				<span class="pf_item_error" ng-show="((pf_form.$submitted || pf_form.dateBirth.$dirty) && (!pf_form.dateBirth.$valid))">
+					Please enter a valid Date.
+				</span>
+		</div>
+			<div class="pf_item">
+			<label>Image URL:</label>
+			<span>
+				<input type="url" data-ng-model="profileForm.profile.img" name="img" />
+			</span>
+				<span class="pf_item_error" ng-show="((pf_form.$submitted || pf_form.img.$dirty) && (profileForm.profile.img.indexOf('.png') <= 1 && profileForm.profile.img.indexOf('.jpg') <= 1 && profileForm.profile.img.indexOf('.jpeg') <= 1))">
+					Please use a ".png",".jpg" or ".jpeg"
+				</span>
+		</div>
+			<div class="pf_item">
+			<label>Email<span>*</span>:</label>
+			<span>
+				<input type="email" name="email" data-ng-model="profileForm.profile.email" ng-class="{'pristine-invalid':(pf_form.$submitted || pf_form.email.$dirty) && (pf_form.email.$error.required || pf_form.email.$error.email)}"  required="required" />
+			</span>
+				<span class="pf_item_error" ng-show="(pf_form.$submitted || pf_form.email.$dirty) && (pf_form.email.$error.required || pf_form.email.$error.email)">
+					Please enter a valid email address.
+				</span>
+		</div>
+			<div class="pf_item">
+			<label>Website URL:</label>
+			<span>
+				<input type="url" data-ng-model="profileForm.profile.website"  />
+			</span>
+		</div>
+			<div class="pf_item">
+			<label>Address<span>*</span>:</label>
+			<span>
+				<textarea data-ng-model="profileForm.profile.address" name="address" required="required" ng-class="{'pristine-invalid':((pf_form.$submitted || pf_form.address.$dirty) && !pf_form.address.$valid)}" ></textarea>
+			</span>
+				<span class="pf_item_error" ng-show="((pf_form.$submitted || pf_form.address.$dirty) && !pf_form.address.$valid)">
+					Please enter an Address.
+				</span>
+		</div>
+			<div class="pf_item">
+			<label>Twitter<span>*</span>:</label>
+			<span>
+				<input type="text" name="twitter" data-ng-model="profileForm.profile.twitter" required="required" placeholder="@" ng-class="{'pristine-invalid':((pf_form.$submitted || pf_form.twitter.$dirty) && !pf_form.twitter.$valid)}" />
+			</span>
+				<span class="pf_item_error" ng-show="((pf_form.$submitted || pf_form.twitter.$dirty) && !pf_form.twitter.$valid)">
+					Please enter a Twitter handler.
+				</span>
+				<span class="pf_item_error" ng-show="((pf_form.$submitted || pf_form.twitter.$dirty) && profileForm.profile.twitter.indexOf('@') > -1)">
+					You don't need the @.
+				</span>
+		</div>
+			<div class="pf_item">
+			<label>Facebook<span>*</span>:</label>
+			<span>
+				<input type="url" name="facebook" data-ng-model="profileForm.profile.facebook" required="required" ng-class="{'pristine-invalid':((pf_form.$submitted || pf_form.facebook.$dirty) && !pf_form.facebook.$valid)}" />
+			</span>
+				<span class="pf_item_error" ng-show="((pf_form.$submitted || pf_form.facebook.$dirty) && !pf_form.facebook.$valid)">
+					Please enter a valid Facebook URL.
+				</span>
+		</div>
+			<div class="pf_item">
+			<label>LinkedIn:</label>
+			<span>
+				<input type="url" data-ng-model="profileForm.profile.linkedIn" />
+			</span>
+		</div>
+			<div class="pf_item">
+			<label>Google+:</label>
+			<span>
+				<input type="url" data-ng-model="profileForm.profile.googlePlus" />
+			</span>
+		</div>
+					<input type="submit" class="pf_submit" value="Submit Profile" />
+
+		</form>
+	</div>
+
+		<a href="" ng-click="profileForm.pfVisible()">
+			<span>Add Profile</span>
+		</a>
+	</div>
+	<div class="pa_control">
+	<div class="details_control" data-ng-controller="detailsController as details">
+		<h1>Welcome to the Profile Collection</h1>
+		<div class="details_info">
+			<p>As I am learning AngularJS, I am using this as practice. This will include multiple controls, forms withd validation, repeaters, class changes and more. Please comment or contact me if you want to help {details below} :)</p>
+		</div>
+	</div>
+	<div class="profileArray" data-ng-controller="profilearrayController as profileArray">
+			<div class="pa_item" ng-repeat="profile in profileArray.profiles">
+				<div class="pa_item_header">
+					<img ng-src="{{profile.img}}" alt="{{profile.firstName + ' ' + profile.lastName}}" />
+					<h2>{{profile.firstName + " " + profile.lastName}}</h2>
+					<button class="pa_show"  ng-click="profile.paVisible();" ng-class="{'slideToggle':profile.visible==true}" ></button>
+				</div>
+				<div class="pa_item_cont" ng-class="{'pa_item_cont_open':profile.visible==true}" >
+					<div class="pa_cell">
+						<label>Gender</label>
+						<span>{{profile.gender}}</span>
+					</div>
+					<div class="pa_cell">
+						<label>D.O.B</label>
+						<span>{{profile.dateBirth | date:'dd/MM/yyyy'}}</span>
+					</div>
+					<div class="pa_row">
+						<label>Address</label>
+						<span>{{profile.address}}</span>
+					</div>
+					<div class="pa_cell">
+						<label>Email</label>
+						<span><a ng-href="mailto:{{profile.email}}">{{profile.email}}</a></span>
+					</div>
+					<div class="pa_cell">
+						<label>Website</label>
+						<span><a ng-href="{{profile.website}}" target="_blank">{{profile.website}}</a></span>
+					</div>
+					<div class="pa_cell">
+						<label>Twiter</label>
+						<span><a ng-href="https://twitter.com/search?q={{profile.twitter}}&src=typd" target="_blank">@{{profile.twitter}}</a></span>
+					</div>
+					<div class="pa_cell">
+						<label>Facebook</label>
+						<span><a ng-href="{{profile.facebook}}" target="_blank">{{profile.facebook}}</a></span>
+					</div>
+					<div class="pa_cell">
+						<label>LinkedIn</label>
+						<span><a ng-href="{{profile.linkedIn}}" target="_blank">{{profile.linkedIn}}</a></span>
+					</div>
+					<div class="pa_cell">
+						<label>Google+</label>
+						<span><a ng-href="{{profile.googlePlus}}" target="_blank">{{profile.googlePlus}}</a></span>
+					</div>
+
+				</div>
+		</div>
+	</div>
+	</div>
+</div>
+<script>
+var app = angular.module('profileApp',[]);
+
+
+//Shared Profiles Service
+app.factory('MyProfiles',function(){
+	var profiles = [];
+	return {
+	setProfiles : function(sendProfiles){
+		profiles = sendProfiles;
+		return profiles;
+	},
+	addProfiles : function(sendProfiles){
+		return profiles.push(sendProfiles);
+	},
+	getProfiles : function(){
+		return profiles;
+	}
+}
+})
+
+//Details Control
+app.controller('detailsController', function(){
+
+});
+//Array Control
+app.controller('profilearrayController',['MyProfiles',function(MyProfiles){
+	this.profiles = [{
+
+
+img:'https://media.licdn.com/mpr/mpr/shrink_100_100/p/4/005/023/1a5/352e980.jpg',
+		firstName:'Chris',
+		lastName:'Pateman',
+		gender:'Male',
+		dateBirth:'09/12/1990',
+		address:'Northampton',
+		email:'info@purerandom.co.uk',
+		website:'http://www.purerandom.co.uk/the-developer',
+		twitter:'pateman90',
+		facebook:'https://www.facebook.com/christopher.pateman.3',
+		linkedIn:'https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile',
+		googlePlus:'https://plus.google.com/u/0/115759722116880665817/posts',
+		visible:false,
+		paVisible: function(){
+			this.visible==true?this.visible=false:this.visible=true;
+		}
+	},{
+
+
+img:'https://media.licdn.com/mpr/mpr/shrink_100_100/p/4/005/023/1a5/352e980.jpg',
+		firstName:'Pure',
+		lastName:'Random',
+		gender:'Male',
+		dateBirth:'09/12/1990',
+		address:'The Internet',
+		email:'info@purerandom.co.uk',
+		website:'http://www.purerandom.co.uk',
+		twitter:'pateman90',
+		facebook:'https://www.facebook.com/christopher.pateman.3',
+		linkedIn:'https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile',
+		googlePlus:'https://plus.google.com/u/0/115759722116880665817/posts',
+		visible:false,
+		paVisible: function(){
+			this.visible==true?this.visible=false:this.visible=true;
+		}
+	}];
+
+	MyProfiles.setProfiles(this.profiles);
+	this.profiles  = MyProfiles.getProfiles();
+}]);
+//Form Control
+app.controller('profileformController',['$scope','MyProfiles',function($scope,MyProfiles){
+	var profileForm = this;
+	profileForm.visible = false;
+	profileForm.pfVisible = function(){
+		(profileForm.visible === true?profileForm.visible=false:profileForm.visible=true);
+		$('.profileForm').toggleClass('profileFormShow');
+	  }
+	profileForm.MaxDate = (new Date()).getDate();
+
+	profileForm.profileFormClose = function(ThisprofileForm){
+		profileForm.visible=false;
+		$scope.pf_form.$setPristine();
+		profileForm.profileForm={};
+	}
+
+	profileForm.addProfile = function(){
+		$scope.profileForm.profile.visible = false;
+		$scope.profileForm.profile.paVisible =  function(){
+			this.visible==true?this.visible=false:this.visible=true;
+		};
+	console.log($scope.profileForm.profile);	MyProfiles.addProfiles
+
+($scope.profileForm.profile);
+		$scope.pf_form.$setPristine();
+		$scope.profileForm.profile = {};
+	profileForm.visible=false;
+	}
+}]);
+</script>
+</body>
+</html>

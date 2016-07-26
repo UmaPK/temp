@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="app6" ng-cloak>
+  <head>
+    <style>
+      [ng\:cloak],[ng-cloak],.ng-cloak{
+        display:none;
+      }
+      .part1
+      {
+          border: 2px solid black;
+          margin-bottom: 10px;
+      }
+      .p1{
+        margin-left: 50px;
+        padding-right: 20px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      .p2{
+        margin-left:100px;
+        margin-top: 50px;
+      }
+      .p3{
+        margin-left: 270px;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div ng-controller="petctrl" class="part1">
+      <h3 align=center>Search Here..</h3><hr>
+      <label class="p1">Enter Pet Name :</label>
+      <input type="text" ng-model="pet_name" class="p1"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button ng-click="getpet()" class="p1">submit</button>
+      <br/>
+      {{petdata}}
+    </div>
+    <div ng-controller="petctrl" class="part1">
+      <h3 align=center>Add New Record Here..</h3><hr>
+      <label class="p2">Enter Pet Name&nbsp;&nbsp;&nbsp;: </label>
+      <input type="text" ng-model="petname" class="p2"/><br/><br/>
+      <label class="p2">Enter Real Name : </label>
+      <input type="text" ng-model="realname" class="p2"/><br/><br/>
+      <button ng-click="addnewpet(realname,petname)" class="p3">ADD</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="exam6.js"></script>
+  </body>
+</html>

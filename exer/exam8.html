@@ -1,0 +1,43 @@
+<html ng-app="app8" ng-cloak>
+<head>
+</head>
+<body ng-controller="Myctrl">
+  Original name : {{name}}</br/>
+  Uppercase:{{name|uppercase}}<br/>
+  Lowercase :{{name|lowercase}}<br/>
+  <h3>List the items by key elements</h3><hr>
+  Key Letter:<input type="text" ng-model="search">
+  <br/>The Elements are:
+  <div ng-repeat="i in x | filter :search" >
+      {{ i }}
+  </div>
+  <hr>
+  <table>
+    <tr>
+      <th ng-click="getkey('id')">ID</th>
+      <th ng-click="getkey('name')">NAME</th>
+    </tr>
+    <tr ng-repeat="person in people | orderBy : sortkey ">
+      <td>{{person.id}}</td>
+      <td>{{person.name}}</td>
+    </tr>
+  </table>
+  <hr>
+  <p>Date 1 : {{currDate | date:'medium'}}</p>
+  <p>Date 2 : {{currDate | date:"MM/dd/yyyy 'at' h:mma"}}</p>
+  <hr>
+  <p>Original string : {{mystr}}</p>
+  <p>30 Characters : {{mystr | limitTo:30}}</p>
+  <hr>
+  <label>Number Filter : </label>
+    <input type="text" ng-model="numVal">
+    <p>Default : {{numVal | number}}</p>
+    <p>No Fractions : {{numVal | number:0}}</p>
+    <p>Negative 4 Decimals : {{-numVal | number:14}}</p>
+    <hr>
+    {{people[0]}}
+    {{people[0]| json}}
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="exam8.js"></script>
+</body>
+</html>

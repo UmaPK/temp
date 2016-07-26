@@ -1,0 +1,25 @@
+<html ng-app="Myapp">
+<head>
+</head>
+<body>
+  <div ng-controller="cont">
+  <!-- Name:<input type="text" ng-model="name" placeholder="name" ng-click="display()"/>
+  <br>Your Sweet name is {{name}}<br> -->
+  <input type="checkbox" ng-model="add_tax">Add Tax
+  <input type="checkbox" ng-model="mytotal">Total
+    Cost:<input type="text" ng-model="cost" placeholder="cost" ng-click="Cost()"/>
+    <br>Your cost is {{cost|currency}}
+    <br>
+      <p ng-show="add_tax">Your Tax is {{tax|currency}}</p><br>
+    <p ng-show="mytotal">  Your Total is {{total|currency}}</p>
+    Select items:<select ng-model="snipping" ng-options="s.pname for s in snipping_options|orderBy:'pname'"></select>
+    <button ng-click="add()">Add</button><br>
+    The cureent total is {{current_total|currency}}<br/>
+    <!-- <input type="radio" ng-model="snipping1"/>Book<br/>
+    <input type="radio" ng-model="snipping1"/>Bag<br/>
+    <input type="radio" ng-model="snipping1"/>Marker -->
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+  <script src="ang_js.js"></script>
+</body>
+</html>

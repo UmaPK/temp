@@ -1,0 +1,122 @@
+{
+  "profiles": [
+    {
+      "id": 1,
+      "Name": "Uma",
+      "Person_Details": {
+        "e_mail": "umasara8795@gmail.com",
+        "When_you_were_born": "08.07.1995",
+        "livePlace": "Chennai",
+        "Nationality": "Indian",
+        "Marital_status": "Single"
+      },
+      "Educational_Qualification": {
+        "HSC": {
+          "Name": "S.h.n.v.hr.sec.school",
+          "When": "2010",
+          "Where": "Sivakasi",
+          "percentage": 91
+        },
+        "SSC": {
+          "Name": "S.h.n.v.hr.sec.school",
+          "When": "2012",
+          "Where": "sivakasi",
+          "percentage": 91
+        },
+        "Post_Graduation": {
+          "Name": "Mepco Schlenk Enginerring College",
+          "From": "2012",
+          "To": "2016",
+          "Where": "sivakasi"
+        }
+      },
+      "Experience": {
+        "Projects": {
+          "Title": "Car Pooling",
+          "Description": "To facilitate the user with an appliaction which notify then the cars available for sharing travel to the same destination",
+          "Duration_in_months": "2"
+        },
+        "Work_Experience": {
+          "Organization": "Cognizant Technical soultions",
+          "Where": "Chennai",
+          "Experience": "2"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "Name": "Matta",
+      "Educational_Qualification": {
+        "HSC": {
+          "Name": "S.h.n.v.hr.sec.school",
+          "When": "2012",
+          "Where": "hjvghjvgj",
+          "percentage": 90
+        },
+        "SSC": {
+          "Name": "D A V Centenary Public school",
+          "When": "2012",
+          "Where": "Haridwar"
+        },
+        "Post Graduation": {
+          "Name": "Lovely Professional University",
+          "From": "2012",
+          "To": "2016",
+          "Where": "Phagwara"
+        }
+      },
+      "Experience": {
+        "Projects": {
+          "Title": "Car Pooling",
+          "Description": "To facilitate the user with an appliaction which notify then the cars available for sharing travel to the same destination",
+          "Duration in months": "2"
+        },
+        "Work Experience": {
+          "Organization": "Cognizant Technical soultions",
+          "Where": "Chennai",
+          "Experience": "2"
+        }
+      }
+    },
+    {
+      "Name": "Mittal",
+      "Educational_Qualification": {
+        "HSC": {
+          "Name": "S.h.n.v.hr.sec.school",
+          "When": "2012",
+          "Where": "hjvghjvgj",
+          "dfghj": "hhh",
+          "percentage": 90
+        },
+        "SSC": {
+          "Name": "D A V Centenary Public school",
+          "When": "2012",
+          "Where": "Haridwar"
+        },
+        "Post Graduation": {
+          "Name": "Lovely Professional University",
+          "From": "2012",
+          "To": "2016",
+          "Where": "Phagwara"
+        }
+      },
+      "Experience": {
+        "Projects": {
+          "Title": "Car Pooling",
+          "Description": "To facilitate the user with an appliaction which notify then the cars available for sharing travel to the same destination",
+          "Duration in months": "2"
+        },
+        "Work Experience": {
+          "Organization": "Cognizant Technical soultions",
+          "Where": "Chennai",
+          "Experience": "2"
+        }
+      },
+      "id": 3
+    },
+    {
+      "username": "uma PK",
+      "id": 4
+    }
+  ]
+}

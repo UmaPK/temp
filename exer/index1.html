@@ -1,0 +1,21 @@
+<html ng-app="Myapp">
+<head>
+</head>
+<body ng-Controller="Mycont">
+  <div ng-repeat="emp in employee">
+{{emp.name}}
+<a href="#" ng-click="phone_details=true" ng-hide="phone_details">Show</a>
+<a href="#" ng-click="phone_details=false" ng-show="phone_details">Hide</a>
+<div style="margin-left:40px;" ng-show="phone_details">
+(
+<span ng-repeat="number in emp.phone">
+  <span ng-show="$index>0">,</span>
+  {{number}}
+</span>
+)
+</div>
+</div>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+  <script src="ang_js.js"></script>
+</body>
+</html>

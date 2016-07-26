@@ -1,0 +1,119 @@
+<html ng-app="profileApp">
+<head>
+  <style>
+  .item {
+	    width: 47%;
+	  display: inline-block;
+	  margin: 7px 1%;
+	  height: 42px;
+	  vertical-align: top;
+	}
+
+	.item > label {
+	    width: 30%;
+	    display: inline-block;
+	}
+  .form > input {
+	    width: 30%;
+	    display: inline-block;
+    border-color: black;
+
+	}
+	.item > span {
+	    display: inline-block;
+	    width: 68%;
+		  vertical-align: top;
+	}
+
+	.item > span > input[type="text"],.item > span > input[type="email"], .item > span > input[type="url"],.item > span > textarea.item > span > input[type="date"] {
+	    width: 97%;
+	    /*border-color: transparent;*/
+		padding:1px;
+	}
+  .item > span.error_msg {
+	    display: block;
+	  color: rgb(225, 68, 68);
+	  margin-left: 20px;
+	  width: auto;
+	  margin-top: 2px;
+	}
+
+	/*-- Not been touched --*/
+	.item .ng-prestine{background-color:black}
+	/*-- Being edited and not valid --*/
+	.item .ng-dirty.ng-invalid, .pristine-invalid{background-color:rgb(255, 153, 153)}
+	/*-- being edited and valid --*/
+	.item .ng-dirty.ng-valid{background-color:#93BA63}
+  </style>
+</head>
+<body>
+  <div>
+<form ng-submit="form.$valid && profileForm.addProfile(profileArray)" ng-model="form" name="form"  novalidate>
+  <div class="pf_error" ng-show="form.$submitted && !form.$valid" >
+    Error: Please check all mandatory fields are filled out correctly
+  </div>
+  <div class="item">
+    <label>Firstname<span>*</span>:</label>
+  <span>
+    <input  type="text" data-ng-model="profileForm.profile.firstName" name="firstName" required="required" ng-class="{'pristine-invalid':((form.$submitted || form.firstName.$dirty) && !form.firstName.$valid)}" />
+  </span>
+    <span class="error_msg" ng-show="((form.$submitted || form.firstName.$dirty) && !form.firstName.$valid)">
+      Please enter a First name.
+    </span>
+</div>
+  <div class="item">
+  <label>Lastname:</label>
+  <span>
+    <input type="text" data-ng-model="profileForm.profile.lastName" />
+  </span>
+</div>
+  <div class="item">
+  <label>Gender<span>*</span>:</label>
+  <span>
+
+    <label for="genderMale" >Male
+    <input type="radio" id="genderMale" name="gender" data-ng-model="profileForm.profile.gender" value="Male" ng-required="!profileForm.profile.gender" ng-class="{'pristine-invalid':((form.$submitted || form.gender.$dirty) && form.gender.$error.required)}"  /></label>
+    <label for="genderFemale" >Female
+    <input type="radio" id="genderFemale" name="gender" data-ng-model="profileForm.profile.gender" value="Female" ng-required="!profileForm.profile.gender" ng-class="{'pristine-invalid':((form.$submitted || form.gender.$dirty) && form.gender.$error.required)}" /></label>
+  </span>
+    <span class="error_msg" ng-show="((form.$submitted || form.gender.$dirty) && form.gender.$error.required)">
+      Please Select a Gender.
+    </span>
+</div>
+  <div class="item">
+  <label>Date of Birth<span>*</span>:</label>
+  <span>
+    <input type="date" data-ng-model="profileForm.profile.dateBirth" placeholder="yyyy-MM-dd" min="1950-01-01" max="2010-12-31" name="dateBirth" required class="{'pristine-invalid':((form.$submitted || form.dateBirth.$dirty) && (!form.dateBirth.$valid))}" />
+  </span>
+    <span class="error_msg" ng-show="((form.$submitted || form.dateBirth.$dirty) && (!form.dateBirth.$valid))">
+      Please enter a valid Date.
+    </span>
+</div>
+  <div class="item">
+  <label>Email<span>*</span>:</label>
+  <span>
+    <input type="email" name="email" data-ng-model="profileForm.profile.email" ng-class="{'pristine-invalid':(form.$submitted || form.email.$dirty) && (form.email.$error.required || form.email.$error.email)}"  required="required" />
+  </span>
+    <span class="error_msg" ng-show="(form.$submitted || form.email.$dirty) && (form.email.$error.required || form.email.$error.email)">
+      Please enter a valid email address.
+    </span>
+</div>
+  <div class="item">
+  <label>Address<span>*</span>:</label>
+  <span>
+    <textarea data-ng-model="profileForm.profile.address" name="address" required="required" ng-class="{'pristine-invalid':((form.$submitted || form.address.$dirty) && !form.address.$valid)}" ></textarea>
+  </span>
+    <span class="error_msg" ng-show="((form.$submitted || form.address.$dirty) && !form.address.$valid)">
+      Please enter an Address.
+    </span>
+
+</div>
+      <input type="submit" class="submitb" value="Submit Profile" />
+</form>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script>
+var app = angular.module('profileApp',[]);
+</script>
+</body>
+</html>

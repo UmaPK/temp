@@ -1,0 +1,20 @@
+<html ng-app="app10" ng-cloak>
+  <head>
+    <title>AngularJS Tutorial 10</title>
+    <style>
+    [ng\:cloak], [ng-cloak], .ng-cloak {
+      display: none;
+    }
+    </style>
+  </head>
+  <body>
+    <div ng-controller="mainCtrl">
+      <div my-directive="supermarket" array-item="item | uppercase"></div>
+          <button ng-click="fun()">Replace Bag</button>
+      <button ng-click="fun1()">Remove Eraser</button><br/><br/>
+        Enter item to add:<input type="text" ng-model="new"/>  <button ng-click="fun2()">Add</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="exam10.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+
+<html ng-app="app1">
+<head>
+</head>
+<body>
+<span id="name">uma</span>
+<button ng-click="edit()">get</button>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+var app1=angular.module("app1",[]);
+app1.controller("UserForm",function($scope,$http,$compile){
+$scope.edit=function(){
+    var divElement = angular.element(document.querySelector('#name'));
+    var appendHtml =('<div>uma PK</uma>');
+ divElement.append(appendHtml);
+   };
+  
+});
+</script>
+</body>
+</html>

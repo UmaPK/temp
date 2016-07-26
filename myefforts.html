@@ -1,0 +1,61 @@
+<html ng-app="app1">
+<head>
+  <title> user form </title>
+</head>
+<body>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="myefforts.js"></script>
+  <div ng-controller="UserForm">
+    <div mypro="content">
+    <label> User Name </label>
+    <!-- <input type="text" ng-model="name" ng-required="true" ng-minlength="2"> -->
+    <!-- <h1> {{content.Person_Details.When_you_were_born}} </h1> -->
+    <span>{{content.Name}}</span><br>
+    <h2> Personal Details : </h2>
+    <label> Email: </label>
+    <span id="email" ng-model="email">{{content.Person_Details.e_mail}}</span><br>
+    <!-- <input type="text" ng-model="email1" ng-required="true" ng-minlength="2" placeholder={{content.Person_Details.e_mail}}><br><br> -->
+    <label> When you were born : </label>
+    <span ng-model="dob">{{content.Person_Details.When_you_were_born}}</span><br>
+    <!-- <input type="date" ng-model="dob" ng-required="true" placeholder="{{content.Person_Details.When_you_were_born}}" ng-minlength="2"><br><br> -->
+    <label> Where do you live : </label>
+    <span ng-model="place">{{content.Person_Details.livePlace}}</span><br>
+    <!-- <textarea type="text" ng-model="place" ng-required="true" ng-minlength="2" placeholder="{{content.Person_Details.livePlace}}"></textarea><br><br> -->
+    <label> Nationality :</label>
+    <span ng-model="nationality">{{content.Person_Details.Nationality}}</span><br>
+    <!-- <input type="text" ng-model="nationality" ng-required="true" ng-minlength="2" placeholder="{{content.Person_Details.Nationality}}"><br><br> -->
+    <label> Marital status </label>
+    <span ng-model="maritalStatus">{{content.Person_Details.Marital_status}}</span><br>
+    <!-- <input type="text" ng-model="maritalStatus" ng-required="true" ng-minlength="2" placeholder="{{content.Person_Details.Marital_status}}"><br><br> -->
+    <h2> Educational Details : </h2>
+    <h3> High School Details: </h3>
+    <label> School : </label>
+    <span  ng-model="hSchoolName">{{content.Educational_Qualification.HSC.Name}}</span><br>
+    <!-- <input type="text" ng-model="hSchoolName" ng-required="true" ng-minlength="2" placeholder="{{content.Educational_Qualification.HSC.Name}}"><br><br> -->
+    <label> Year of passing : </label>
+    <span  ng-model="hSchoolTime">{{content.Educational_Qualification.HSC.When}}</span><br>
+    <!-- <input type="text" ng-model="hSchoolTime" ng-required="true" ng-minlength="2" placeholder="{{content.Educational_Qualification.HSC.When}}"><br><br> -->
+    <label> Place : </label>
+    <span  ng-model="hSchoolPlace">{{content.Educational_Qualification.HSC.Where}}</span><br>
+    <!-- <input type="text" ng-model="hSchoolPlace" ng-required="true" ng-minlength="2" placeholder="{{content.Educational_Qualification.HSC.Where}}"><br><br> -->
+    <label> Percentage Scored :</label>
+    <span ng-model="hSchoolPercentage">{{content.Educational_Qualification.HSC.percentage}}</span><br>
+    <!-- <input type="text" ng-model="hSchoolPercentage" ng-required="true" ng-minlength="2" placeholder="{{content.Educational_Qualification.HSC.percentage}}"><br><br> -->
+    <h2> Experience : </h2>
+    <h3> Projects undertaken: </h3>
+    <label> Title: </label>
+    <span  ng-model="title">{{content.Experience.Projects.Title}}</span><br>
+    <!-- <input type="text" ng-model="title" ng-required="true" ng-minlength="2" placeholder="{{content.Experience.Projects.Title}}"><br><br> -->
+    <label> Description : </label>
+    <span  ng-model="description">{{content.Experience.Projects.Description}}</span><br>
+    <!-- <input type="text" ng-model="description" ng-required="true" ng-minlength="2" placeholder="{{content.Experience.Projects.Description}}"><br><br> -->
+    <label> Duration : </label>
+    <span  ng-model="duration">{{content.Experience.Projects.Duration_in_months}}</span><br>
+    <!-- <input type="text" ng-model="duration" ng-required="true" ng-minlength="2" placeholder="{{content.Experience.Projects.Duration_in_months}}"><br><br> -->
+    <!-- <span></span> -->
+    <button type="submit and view profile" ng-click="getData()" class="btn btn-default">Get Data and view profile</button>
+<button ng-click="edit()">EDIT PERSONEL</button>
+    </div>
+</div>
+</body>
+</html>
